@@ -1,5 +1,6 @@
 import TodoRegist from "../component/todo/TodoRegist";
 import styles from "./pagelayout.module.css";
+import { useState } from "react";
 
 const TodoRegistPage = () => {
   //TODO를 백엔드 서버에 보내서 등록하고 성공하면 메인페이지로 화면을 전환하는 역할의 함수

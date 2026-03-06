@@ -8,7 +8,6 @@ const TodoView = ({ todo, onToggleDone, onDelete, onGoBack }) => {
 
   return (
     <div className={styles.container} data-no={todo.todoNo}>
-      {/* 1. 상단 상태 뱃지 (왼쪽: 상태, 오른쪽: 번호) */}
       <div className={styles.headerBadge}>
         <span
           className={`${styles.statusBadge} ${todo.todoDone === 1 ? styles.done : styles.progress}`}
@@ -40,7 +39,7 @@ const TodoView = ({ todo, onToggleDone, onDelete, onGoBack }) => {
         </div>
       </div>
 
-      {/* 4. 하단 버튼 영역 */}
+      {/* 4. 하단 버튼  */}
       <div className={styles.buttonGroup}>
         <button
           className={`${styles.btn} ${styles.btnDone}`}

@@ -10,7 +10,7 @@ const Header = () => {
         </div>
         <nav className={styles.nav}>
           <Link to="/regist">할일등록</Link>
-          <Link to="/menu2">메뉴2</Link>
+          <Link to="/menu2">등록예정</Link>
         </nav>
       </div>
     </header>

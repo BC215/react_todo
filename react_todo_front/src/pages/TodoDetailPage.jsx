@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import styles from "../component/todo/TodoRegist.module.css"; // reuse form styles
+import styles from "../component/todo/TodoRegist.module.css";
 import TodoView from "../component/view/TodoView";
 
 const TodoDetailPage = () => {
