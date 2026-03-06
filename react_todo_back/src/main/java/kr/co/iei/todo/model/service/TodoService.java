@@ -18,17 +18,33 @@ public class TodoService {
 		return list;
 	}
 
-	public int insertTodo(Todo todo) {
-		// ensure defaults
-		if (todo.getTodoDone() == null) {
-			todo.setTodoDone(0);
-		}
-		if (todo.getTodoDate() == null || todo.getTodoDate().isEmpty()) {
-			// using Oracle SYSDATE via SQL default could be better, but set here as string
-			java.time.format.DateTimeFormatter fmt = java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd");
-			todo.setTodoDate(java.time.LocalDate.now().format(fmt));
-		}
-		return todoDao.insertTodo(todo);
+	public Todo selectOneTodo(int todoNo) {
+		return todoDao.selectOneTodo(todoNo);
 	}
+
+	public boolean deleteTodo(int todoNo) {
+		return todoDao.deleteTodo(todoNo) > 0;
+	}
+
+    public boolean updateTodo(Todo todo) {
+        // ensure defaults again if needed
+        if (todo.getTodoDone() == null) todo.setTodoDone(0);
+        if (todo.getTodoDate() == null || todo.getTodoDate().isEmpty()) {
+            todo.setTodoDate(java.time.LocalDate.now().toString());
+        }
+        return todoDao.updateTodo(todo) > 0;
+    }
+
+    public int insertTodo(Todo todo) {
+        // ensure defaults
+        if (todo.getTodoDone() == null) {
+            todo.setTodoDone(0);
+        }
+        if (todo.getTodoDate() == null || todo.getTodoDate().isEmpty()) {
+            java.time.format.DateTimeFormatter fmt = java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            todo.setTodoDate(java.time.LocalDate.now().format(fmt));
+        }
+        return todoDao.insertTodo(todo);
+    }
 
 }

@@ -5,10 +5,32 @@
 		SELECT * FROM TODO_TBL
 	</select>
 
-	<insert id="insertTodo" parameterType="todo">
-		INSERT INTO TODO_TBL (TODO_NO, TODO_CONTENT, TODO_WRITER, TODO_DONE,
-		TODO_DATE)
-		VALUES (TODO_SEQ.NEXTVAL, #{todoContent}, #{todoWriter}, #{todoDone,
-		jdbcType=INTEGER, javaType=int}, #{todoDate, jdbcType=VARCHAR})
-	</insert>
+  <select id="selectOneTodo" parameterType="int" resultType="todo">
+      SELECT * FROM TODO_TBL WHERE TODO_NO = #{todoNo}
+  </select>
+  <delete id="deleteTodo" parameterType="int">
+      DELETE FROM TODO_TBL WHERE TODO_NO = #{todoNo}
+  </delete>
+
+  <update id="updateTodo" parameterType="todo">
+      UPDATE TODO_TBL
+      SET TODO_CONTENT = #{todoContent},
+          TODO_WRITER = #{todoWriter},
+          TODO_DONE = #{todoDone},
+          TODO_DATE = #{todoDate}
+      WHERE TODO_NO = #{todoNo}
+  </update>
+
+  <insert id="insertTodo" parameterType="todo">
+      INSERT INTO TODO_TBL (
+          TODO_NO, TODO_CONTENT, TODO_WRITER, TODO_DONE, TODO_DATE
+      )
+      VALUES (
+          TODO_SEQ.NEXTVAL,
+          #{todoContent},
+          #{todoWriter},
+          #{todoDone, jdbcType=INTEGER, javaType=int},
+          #{todoDate, jdbcType=VARCHAR}
+      )
+  </insert>
 </mapper>
