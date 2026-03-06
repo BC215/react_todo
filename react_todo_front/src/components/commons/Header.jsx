@@ -9,7 +9,7 @@ const Header = () => {
           <Link to="/">TODO APP</Link>
         </div>
         <nav className={styles.nav}>
-          <Link to="/regist">등록하기</Link>
+          <Link to="/regist">할일등록</Link>
           <Link to="/menu2">메뉴2</Link>
         </nav>
       </div>

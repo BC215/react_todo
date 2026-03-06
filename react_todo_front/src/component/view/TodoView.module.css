@@ -1,0 +1,104 @@
+.container {
+  position: relative;
+  width: 800px;
+  margin: 100px auto;
+  padding: 50px 35px 30px;
+  background: #fff;
+  border-radius: 15px; /* 조금 더 둥글게 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+/* 상단 '완료/진행중' 뱃지 */
+.statusBadge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.done {
+  background-color: #999;
+}
+
+.progress {
+  background-color: #4caf50;
+}
+
+/* 헤더 영역 (상태 뱃지, 번호) */
+.headerBadge {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.container::after {
+  content: "No." attr(data-no);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #f0f0f0;
+  color: #999;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+}
+
+/* 제목 */
+.title {
+  display: none;
+}
+
+/* 데이터 행 */
+.row {
+  display: flex;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.label {
+  width: 60px;
+  font-weight: 700;
+  color: #333;
+}
+
+.value {
+  flex: 1;
+  color: #555;
+}
+
+/* 버튼 그룹 */
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btnDone {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btnDelete {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btnBack {
+  background-color: #4caf50;
+  color: white;
+}

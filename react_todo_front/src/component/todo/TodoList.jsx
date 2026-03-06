@@ -1,10 +1,19 @@
+import { Link } from "react-router-dom";
 import styles from "./TodoList.module.css";
 
 const TodoList = ({ todoList }) => {
   return (
     <div className={styles.list}>
       {todoList.map((todo, i) => {
-        return <TodoItem todo={todo} key={"todo" + i} />;
+        return (
+          <Link
+            to={`/detail/${todo.todoNo}`}
+            key={"todo" + i}
+            className={styles.link}
+          >
+            <TodoItem todo={todo} />
+          </Link>
+        );
       })}
     </div>
   );
