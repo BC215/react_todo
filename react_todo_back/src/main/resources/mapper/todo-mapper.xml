@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace = "kr.co.iei.tood.model.dao.TodoDao">
+<mapper namespace="kr.co.iei.todo.model.dao.TodoDao">
+	<select id="selectAllTodo" resultType="todo">
+		SELECT * FROM TODO_TBL
+	</select>
 
+	<insert id="insertTodo" parameterType="todo">
+		INSERT INTO TODO_TBL (TODO_NO, TODO_CONTENT, TODO_WRITER, TODO_DONE,
+		TODO_DATE)
+		VALUES (TODO_SEQ.NEXTVAL, #{todoContent}, #{todoWriter}, #{todoDone,
+		jdbcType=INTEGER, javaType=int}, #{todoDate, jdbcType=VARCHAR})
+	</insert>
 </mapper>

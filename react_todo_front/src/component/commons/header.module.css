@@ -1,0 +1,46 @@
+.header {
+  background-image: linear-gradient(
+    to right,
+    var(--color1) 0%,
+    var(--color2) 100%
+  );
+  padding: 20px;
+}
+
+.header > div {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+.site_logo {
+  text-decoration: none;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 900;
+}
+.nav {
+  display: flex;
+  gap: 20px;
+}
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+.nav a:hover {
+  font-weight: 900;
+}
+
+.nav .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav .menu li {
+  display: inline-block;
+}
